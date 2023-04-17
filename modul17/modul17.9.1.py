@@ -43,7 +43,7 @@ def binary_search(array, number, left, right):
         return binary_search(array, number, middle + 1, right)
 
 
-num_sequence = input('Введите последовательность чисел через пробел: ')
+num_sequence = input("Введите последовательность чисел через пробел: ")
 try:
     num_sequence_list = list(map(int, num_sequence.split()))
 except ValueError:
@@ -51,18 +51,18 @@ except ValueError:
     exit(1)
 
 try:
-    number = int(input('Введите любое число: '))
+    number = int(input("Введите любое число: "))
 except ValueError:
     print("Ошибка: Введите число")
     exit(1)
 
 if number > max(num_sequence_list):
-    print('Число выходит за верхнюю границу списка, введите меньшее число.')
+    print("Число выходит за верхнюю границу списка, введите меньшее число.")
 elif number-1 < min(num_sequence_list):
-    print('Число выходит (или равно) за нижнюю границу списка, введите большее число.')
+    print("Число выходит (или равно) за нижнюю границу списка, введите большее число.")
 else:
     num_sequence_list_sorted = merge_sort(num_sequence_list)
-    print(f'Упорядоченный по возрастанию список: {num_sequence_list_sorted}')
+    print(f"Упорядоченный по возрастанию список: {num_sequence_list_sorted}")
 
     if number not in num_sequence_list:
         num_sequence_list.append(number)
